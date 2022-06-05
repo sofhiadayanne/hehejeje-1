@@ -65,8 +65,8 @@ function quantityChanged(event) {
 function addToCartClicked(event) {
     var button = event.target
     var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+    var title = shopItem.getElementsByClassName('prod_name')[0].innerText
+    var price = shopItem.getElementsByClassName('prod_price')[0].innerText
     var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
     addItemToCart(title, price, imageSrc)
     updateCartTotal()
@@ -76,7 +76,7 @@ function addItemToCart(title, price, imageSrc) {
     var cartRow = document.createElement('div')
     cartRow.classList.add('cart-row')
     var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    var cartItemNames = cartItems.getElementsByClassName('prod_name')
     for (var i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText == title) {
             alert('This item is already added to the cart')
@@ -86,7 +86,7 @@ function addItemToCart(title, price, imageSrc) {
     var cartRowContents = `
         <div class="cart-item cart-column">
             <img class="cart-item-image" src="${imageSrc}" width="10%">
-            <span class="cart-item-title">${title}</span>
+            <span class="prod_name">${title}</span>
         </div>
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
@@ -233,17 +233,17 @@ padding-bottom: 2px;
 
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="https://user-images.githubusercontent.com/70805255/172054343-88b5e934-ce1b-4d2b-a991-792a7b10d7fb.jpg" style="width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt="Sandwich">
+  <img src="2.jpg" style="width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt="Sandwich">
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="https://user-images.githubusercontent.com/70805255/172054346-d4274f9c-645d-4e8f-9d27-973161b3dda2.jpg" style="width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt="Sandwich">
+  <img src="3.jpg" style="width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt="Sandwich">
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="https://user-images.githubusercontent.com/70805255/172057437-a6b2bada-f94b-4c84-b77c-4a4b85752fa9.jpg" style="width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt="Sandwich">
+  <img src="4.jpg" style="width: 100%; background-position: center; background-repeat: no-repeat; background-size: cover;" alt="Sandwich">
 </div>
 
 </div>
@@ -290,60 +290,60 @@ function showSlides() {
 			 
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047758-4b41ac68-a0a0-49b7-9f5d-3c867c01667d.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jake - bruha</span>
+                    <div class="cust_order">
+					<span class="prod_name">jake - bruha</span>
 					<br>
-                        <span class="shop-item-price">$12.99</span>
+                        <span class="prod_price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047756-a7fdcd86-1027-436b-870b-4c21944bbdaa.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jake - tender juicy</span>
+                    <div class="cust_order">
+					<span class="prod_name">jake - tender juicy</span>
 					<br>
-                        <span class="shop-item-price">$14.99</span>
+                        <span class="prod_price">$14.99</span>
                         <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047719-3aade00d-0843-4747-a8b6-50e6fd140f9f.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">sunghoon - sacristan</span>
+                    <div class="cust_order">
+					<span class="prod_name">sunghoon - sacristan</span>
 					<br>
-                        <span class="shop-item-price">$9.99</span>
+                        <span class="prod_price">$9.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047724-03e3452c-d465-48ff-8483-65af8a8bfb03.png" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">ni-ki - holdaper</span>
+                    <div class="cust_order">
+					<span class="prod_name">ni-ki - holdaper</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047725-b61a8d2e-cfe1-4cbd-a0e4-c821bcae8dea.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">ni-ki - chucky</span>
+                    <div class="cust_order">
+					<span class="prod_name">ni-ki - chucky</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047753-fc64bae8-5e75-4a40-9dcd-3c447f5c1115.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jay - sharkboy</span>
+                    <div class="cust_order">
+					<span class="prod_name">jay - sharkboy</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -359,60 +359,60 @@ function showSlides() {
 			 
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047773-655a77cd-899f-493d-95bb-ef255ec07692.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">chan - rambutan</span>
+                    <div class="cust_order">
+					<span class="prod_name">chan - rambutan</span>
 					<br>
-                        <span class="shop-item-price">$12.99</span>
+                        <span class="prod_price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047772-209de2af-0c69-4053-8139-7399aec76045.jpeg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">chan - shakey's manager</span>
+                    <div class="cust_order">
+					<span class="prod_name">chan - shakey's manager</span>
 					<br>
-                        <span class="shop-item-price">$14.99</span>
+                        <span class="prod_price">$14.99</span>
                         <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047771-587f1851-5db0-4e74-bd67-0d30a6b192e1.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">changbin - sore eyes</span>
+                    <div class="cust_order">
+					<span class="prod_name">changbin - sore eyes</span>
 					<br>
-                        <span class="shop-item-price">$9.99</span>
+                        <span class="prod_price">$9.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047768-1e266b09-de8c-406f-a19f-a62ab9d88069.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">felix - sisiw</span>
+                    <div class="cust_order">
+					<span class="prod_name">felix - sisiw</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047761-771a9490-c126-412e-a3cf-a9b2b8e884df.jpeg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">hyunjin - kili kili</span>
+                    <div class="cust_order">
+					<span class="prod_name">hyunjin - kili kili</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047740-433c6652-20ab-424e-a16d-8b9dc7f526bc.jpeg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">lee know - bonakid</span>
+                    <div class="cust_order">
+					<span class="prod_name">lee know - bonakid</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -428,60 +428,60 @@ function showSlides() {
 			 
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047764-e52984ec-90a2-4fe4-a312-05d8f4e75b41.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">haechan - haechan dizon</span>
+                    <div class="cust_order">
+					<span class="prod_name">haechan - haechan dizon</span>
 					<br>
-                        <span class="shop-item-price">$12.99</span>
+                        <span class="prod_price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047751-f5599269-707d-4bf1-b60d-8cbe37fd9f5d.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jeno - ube</span>
+                    <div class="cust_order">
+					<span class="prod_name">jeno - ube</span>
 					<br>
-                        <span class="shop-item-price">$14.99</span>
+                        <span class="prod_price">$14.99</span>
                         <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047747-032211fc-a99a-4245-991e-c2adbd9efed8.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jisung - paru paro gsong</span>
+                    <div class="cust_order">
+					<span class="prod_name">jisung - paru paro gsong</span>
 					<br>
-                        <span class="shop-item-price">$9.99</span>
+                        <span class="prod_price">$9.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047746-c363fa1f-c447-45ea-ba87-f37a1c075954.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">johnny - tanduay</span>
+                    <div class="cust_order">
+					<span class="prod_name">johnny - tanduay</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047736-e920179b-c5c7-4aec-b3b4-5460e7657a14.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">mark - markenji gangster</span>
+                    <div class="cust_order">
+					<span class="prod_name">mark - markenji gangster</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047718-483547a5-2a64-4f8b-a1df-1bb97eb9087d.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">taeyong - bading</span>
+                    <div class="cust_order">
+					<span class="prod_name">taeyong - bading</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -497,60 +497,60 @@ function showSlides() {
 			 
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047769-a6fc9a75-a369-4b1f-9bf4-ad5c6cbb967b.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">dk - tupa</span>
+                    <div class="cust_order">
+					<span class="prod_name">dk - tupa</span>
 					<br>
-                        <span class="shop-item-price">$12.99</span>
+                        <span class="prod_price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047749-3ef2c076-824b-49ef-95bd-4f6ec77908e5.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jeonghan - bonakid</span>
+                    <div class="cust_order">
+					<span class="prod_name">jeonghan - bonakid</span>
 					<br>
-                        <span class="shop-item-price">$14.99</span>
+                        <span class="prod_price">$14.99</span>
                         <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047744-886d4db3-f08b-43fb-a4df-d70bfc839148.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jun - bali leeg</span>
+                    <div class="cust_order">
+					<span class="prod_name">jun - bali leeg</span>
 					<br>
-                        <span class="shop-item-price">$9.99</span>
+                        <span class="prod_price">$9.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047730-cb66cb2c-4351-48b2-a20e-4242ce3780cc.png" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">minghao - cotton bud</span>
+                    <div class="cust_order">
+					<span class="prod_name">minghao - cotton bud</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047729-e3dafc7a-f3e8-4098-be19-a942ae50daf1.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">mingyu - lechon</span>
+                    <div class="cust_order">
+					<span class="prod_name">mingyu - lechon</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172053498-5f842cbd-437f-4048-87cf-c91263130029.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">wonwoo - akyat bahay</span>
+                    <div class="cust_order">
+					<span class="prod_name">wonwoo - akyat bahay</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -566,60 +566,60 @@ function showSlides() {
 			 
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172054291-5c701d2d-712c-4ec4-ab49-17c718a4caca.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">chaeyoung - kuko</span>
+                    <div class="cust_order">
+					<span class="prod_name">chaeyoung - kuko</span>
 					<br>
-                        <span class="shop-item-price">$12.99</span>
+                        <span class="prod_price">$12.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047748-621096cc-9333-4f61-82e6-295c21acd347.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">jeongyeon - hindi alcohol free</span>
+                    <div class="cust_order">
+					<span class="prod_name">jeongyeon - hindi alcohol free</span>
 					<br>
-                        <span class="shop-item-price">$14.99</span>
+                        <span class="prod_price">$14.99</span>
                         <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047735-2c468f13-cad1-40c8-a086-8aa9998469b6.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">mina - lasing</span>
+                    <div class="cust_order">
+					<span class="prod_name">mina - lasing</span>
 					<br>
-                        <span class="shop-item-price">$9.99</span>
+                        <span class="prod_price">$9.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
                 <div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047727-fb5c6cfc-8a8b-4946-a00f-0f8aa0dc7ff2.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">nayeon - devil</span>
+                    <div class="cust_order">
+					<span class="prod_name">nayeon - devil</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047722-615397dd-0f64-4e86-b9b8-e77c03223f3b.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">sana - kwek kwek</span>
+                    <div class="cust_order">
+					<span class="prod_name">sana - kwek kwek</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
 				
 				<div class="col-sm-2 shop-item">
                     <img class="shop-item-image" src="https://user-images.githubusercontent.com/70805255/172047717-148c88e9-b117-450c-b839-e8478445f0a3.jpg" style="width:100%">
-                    <div class="shop-item-details">
-					<span class="shop-item-title">tzuyu - rosalinda</span>
+                    <div class="cust_order">
+					<span class="prod_name">tzuyu - rosalinda</span>
 					<br>
-                        <span class="shop-item-price">$19.99</span>
+                        <span class="prod_price">$19.99</span>
                         <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                     </div>
                 </div>
@@ -649,29 +649,32 @@ function showSlides() {
 			<div class="col-sm-6">
             <h2 class="section-header">DELIVERY DETAILS</h2>
             <div class="cart-row">
-                <form action="checkout.php" method="GET">
-				
-				<div class="col-sm-6">
-				<label for="fname">Name</label><br>
-				<input type="text" name="name" class="col-sm-12"><br>
-				</div>
-
-                <div class="col-sm-6">
-				<label for="lname">Email</label><br>
-				<input type="text" name="email" class="col-sm-12"><br><br>
-				</div>
-
+                <div id="form">
+                    <form action="http://sirjm.infinityfreeapp.com/checkout.php" method="GET" onsubmit="execution()">
+                        <div class="col-sm-6">
+						<label>Name:</label><br>
+                        <input name="cust_name" class="details col-sm-12" type="text"><br>
+						</div>
+						<div class="col-sm-6">
+                        <label>E-Mail:</label><br>
+                        <input name="cust_email" class="details col-sm-12" type="email"><br>
+						</div>
+						</div>
+						</div>
+						
+						<div class="row">
+						<div class="col-sm-12">
+                        <label>Address:</label><br>
+                        <input name="cust_addr" class="details col-sm-12" type="text">
+						</div>
+						</div>
+						<br>
+                        <input type="submit" value="Purchase" id="submit">
+                        <input type="hidden" name="cust_order" id="cust_order" value="cart">
+                    </form>
+                </div>
             </div>
-			<div class="row">
-				
-				<div class="col-sm-12">
-				<label for="fname">Address</label><br>
-				<input type="text" name="address" class="col-sm-12"><br>
-				</div>
-				
-				</form>
 				</div><br>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
 			</div>
 		</div>
         </section>
@@ -697,21 +700,20 @@ function showSlides() {
   </footer>
   
 	<script>
-	
 	 var cartitems = [];
 		
 		
 		function showCart() {
-		document.getElementById("itemlist").innerHTML = "";
+		document.getElementById("cart").innerHTML = "";
 		for(var i=0; i<cartitems.length; i++) {
-			 document.getElementById("itemlist").innerHTML += '<li><div class="itemname"><h6>' + cartitems[i].name + '</h6><p>' + cartitems[i].price + '</p><p><button class="btn btn-sm btn-outline-danger" onclick="removeItem(' + i + ')">Delete</button></p></div></li><li class="divider" style="background-color:black"></li>';
+			 document.getElementById("cart").innerHTML += '<li><div class="cart"><h6>' + prod_name + '</h6><p>' + prod_price + '</p><p><button class="btn btn-sm btn-outline-danger" onclick="removeItem(' + i + ')">Delete</button></p></div></li><li class="divider" style="background-color:black"></li>';
 			}
 		}
 		showCart();
 
 		function addItem() {
-			var n = document.getElementsByClassName("shop-item-name")[1].innerText;
-			var p = document.getElementsByClassName("shop-item-price")[0].innerText;
+			var n = document.getElementsByClassName("prod_name")[1].innerText;
+			var p = document.getElementsByClassName("prod_price")[0].innerText;
 			var d = {
 				name: n,
 				price: p,
@@ -723,8 +725,7 @@ function showSlides() {
 		function removeItem(i) {
                 cartitems.splice(i,1);
                 showCart();
-            }
-		
+            }		
 	</script>
   
   </div>
