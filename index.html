@@ -46,17 +46,6 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
-
-    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
-}
-
-function purchaseClicked() {
-    alert('Thank you for your purchase')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-    }
-    updateCartTotal()
 }
 
 function removeCartItem(event) {
@@ -197,6 +186,7 @@ body,h1,h2,h6,h6,h6,h6 {font-family: 'Montserrat', sans-serif;}
 .w3-center:hover {color: white;}
 h6 {font-size: 1.5rem; margin-bottom:0px;}
 p {font-size: 1rem; margin:0px;}
+.col-sm-6 {padding: 0px;}
 
 .dropdown-toggle {
 shadow: none;
@@ -641,7 +631,7 @@ function showSlides() {
 		
         <section class="container content-section">
 		<hr>
-		<div class="row">
+		<div class="container row">
 		<div class="col-sm-6">
             <h2 class="section-header">CART</h2>
             <div class="cart-row">
@@ -655,21 +645,32 @@ function showSlides() {
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">$0</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
 			</div>
 			<div class="col-sm-6">
-            <h2 class="section-header">CART</h2>
+            <h2 class="section-header">DELIVERY DETAILS</h2>
             <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+                <form action="checkout.php" method="post">
+				
+				<div class="col-sm-6">
+				<label for="fname">Name</label><br>
+				<input type="text" name="name" class="col-sm-12"><br>
+				</div>
+
+                <div class="col-sm-6">
+				<label for="lname">Email</label><br>
+				<input type="text" name="email" class="col-sm-12"><br><br>
+				</div>
+
             </div>
-            <div class="cart-items">
-            </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
-            </div>
+			<div class="row">
+				
+				<div class="col-sm-12">
+				<label for="fname">Address</label><br>
+				<input type="text" name="address" class="col-sm-12"><br>
+				</div>
+				
+				</form>
+				</div><br>
             <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
 			</div>
 		</div>
