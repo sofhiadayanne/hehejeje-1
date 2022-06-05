@@ -465,8 +465,8 @@ function showSlides() {
 		showCart();
 
 		function addItem() {
-			var n = document.getElementsByClassName("shop-item-name")[1].innerText;
-			var p = document.getElementsByClassName("shop-item-price")[0].innerText;
+			var n = document.getElementsByClassName("shop-item-name").value;
+			var p = document.getElementsByClassName("shop-item-price").value;
 			var d = {
 				name: n,
 				price: p,
